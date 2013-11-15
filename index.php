@@ -1,6 +1,6 @@
 <?php
 
-// web/index.php
+// index.php
 
 require_once __DIR__.'/vendor/autoload.php';
 
@@ -13,7 +13,7 @@ $app['debug'] = true;
 $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
     'db.options' => array(
         'driver' => 'pdo_mysql',
-        'dbname' => 'silex_test_app',
+        'dbname' => 'the_daily_sportsman',
         'user' => 'root',
         'password' => 'password'
     )
