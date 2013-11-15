@@ -1,0 +1,247 @@
+html {
+    background-color: #FFFCF1;
+    font-family: "Roboto";
+    color: #333;
+}
+
+body {
+    width: 978px;
+    margin: 0 auto;
+}
+
+small {
+    font-size: 11px;
+}
+
+/**
+ * Generic
+ */
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.green,
+.red,
+.grey {
+    color: #fff;
+}
+
+.green {
+    background-color: #00b500;
+}
+
+.red {
+    background-color: #910000;
+}
+
+.grey {
+    background-color: #666358;
+}
+
+.button {
+    padding: 10px 15px;
+    font-size: 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.button:hover {
+    background-color: #666358;
+}
+
+a.button {
+    display: inline-block;
+}
+
+input.button {
+    margin-right: 10px;
+    border: none;
+}
+
+.flash {
+    font-size: 14px;
+}
+
+.good {
+    color: #00b500;
+}
+
+.bad {
+    color: #910000;
+}
+
+input[type="text"].error,
+textarea.error {
+    border: 1px solid #910000;
+}
+
+/**
+ * Form
+ */
+
+form {
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 1px solid #e6dfc6;
+    padding: 20px 20px 0;
+}
+
+label,
+input,
+textarea {
+    float: left;
+}
+
+label,
+input[type="submit"] {
+    clear: left;
+}
+
+label {
+    width: 100px;
+    margin-top: 8px;
+    margin-right: 20px;
+}
+
+input,
+textarea {
+    margin-bottom: 20px;
+}
+
+input {
+    
+}
+
+input[type="text"],
+textarea {
+    font: 12px "Roboto";
+    border: 1px solid #E6E6E6;
+    padding: 8px;
+    background-color: #fff;
+}
+
+input[type="submit"] {
+    margin-left: 120px;
+}
+
+/**
+ * Section
+ */
+
+.section {
+    border: 1px solid #666358;
+    padding: 20px;
+    background-color: #b2ae9a;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 -1px 0 #8e8b7b;
+}
+
+/**
+ * Head
+ */
+
+.head {
+    color: #47463e;
+    text-shadow: 0 -1px 0 #f0efeb;
+}
+
+/**
+ * Articles
+ */
+
+.articles {
+    padding: 0;
+    list-style: none;
+}
+
+.articles li {
+    position: relative;
+    margin-bottom: 40px;
+    border-top: 1px solid #666358;
+}
+
+.ctrls {
+    position: absolute;
+    top: 18px;
+    right: 0;
+    overflow: hidden;
+    width: 37px;
+    height: 16px;
+}
+
+.ctrls a {
+    display: block;
+    overflow: hidden;
+    float: left;
+    width: 16px;
+    height: 16px;
+    background-image: url('../img/sprite.png');
+    background-repeat: no-repeat;
+    text-indent: 100%;
+    white-space: nowrap;
+}
+
+.edit {
+    margin-right: 5px;
+    background-position: 0 0;
+}
+
+.edit:hover {
+    background-position: -16px 0;
+}
+
+.remove {
+    background-position: 0 -16px;
+}
+
+.remove:hover {
+    background-position: -16px -16px;
+}
+
+/**
+ * Foot
+ */
+
+.foot {
+    display: block;
+}
+
+.foot small {
+    display: block;
+}
+
+/**
+ * Building blocks
+ */
+
+.build-red {
+    outline: 1px solid red;
+    background-color: lightpink;
+}
+
+.build-green {
+    outline: 1px solid green;
+    background-color: lightgreen;
+}
+
+.build-blue {
+    outline: 1px solid blue;
+    background-color: lightblue;
+}
+
+.build-orange {
+    outline: 1px solid orangered;
+    background-color: orange;
+}
+
+.build-goldenrod {
+    outline: 1px solid goldenrod;
+    background-color: palegoldenrod;
+}
+
+.build-steel {
+    outline: 1px solid midnightsteelblue;
+    background-color: steelblue;
+}

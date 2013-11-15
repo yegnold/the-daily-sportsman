@@ -1,0 +1,41 @@
+{% extends layout %}
+
+{% block head_resources %}
+    {% include '_jquery.twig' %}
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" />
+    <script>
+        $(function() {
+            $('#date').datepicker({
+                dateFormat: 'dd/mm/yy'
+            });
+        });
+    </script>
+{% endblock %}
+ 
+{% block content %}
+    {% if errors|default is not empty %}
+        <ul class="flash bad">
+            {% for error in errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    
+    <form action="{{ app.request.baseurl }}/article/save" method="post">
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title" size="62" maxlength="255"{% if form_data.title is defined %} value="{{ form_data.title }}"{% endif %}{% if errors is defined and errors.title is defined %} class="error"{% endif %} />
+        <label for="date">
+            Date<br />
+            <small>(optional)</small>
+        </label>
+        <input type="text" name="date" id="date" size="8" maxlength="10" {% if form_data.date is defined %} value="{{ form_data.date }}"{% endif %} />
+        <label for="content">Content</label>
+        <textarea name="content" id="content" cols="60" rows="15"{% if errors is defined and errors.content is defined %} class="error"{% endif %}>{% if form_data.title is defined %}{{ form_data.content }}{% endif %}</textarea>
+        {% if action == 'edit' %}<input type="hidden" name="id" value="{{ form_data.id }}" />{% endif %}
+        <input type="hidden" name="action" value="{{ action }}" />
+        <input type="submit" value="{{ action }}" class="button green" />
+    </form>
+    
+    {% include '_back.twig' %}
+{% endblock %}

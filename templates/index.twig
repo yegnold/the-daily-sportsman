@@ -1,0 +1,50 @@
+{% extends layout %}
+
+{% block head_resources %}
+    {% include '_jquery.twig' %}
+    <script>
+        $(function() {
+            if ($('.flash').length) {
+                $('.flash').delay(5000).fadeOut(1000, function() {
+                    $(this).remove();
+                });
+            }
+        });
+    </script>
+{% endblock %}
+ 
+{% block content %}
+    <a href="{{ app.request.baseurl }}/article/add" class="button grey">Add a new article</a>
+    
+    {% for message in app.session.getFlashBag.get('message') %}
+        <p class="flash good">
+            <strong>{{ message }}</strong><br />
+            <small>(This message will disappear after 5 seconds)</small>
+        </p>
+    {% endfor %}
+    
+    {% if articles|length %}
+        <ul class="articles">
+            {% for article in articles %}
+                <li>
+                    <h3>{{ article.title }}</h3>
+                    
+                    <small class="uppercase">{{ article.posted }}</small>
+                    
+                    {% if article.content|length %}
+                        <p>{{ article.content[:100] }}&hellip;</p>
+                    {% endif %}
+                    
+                    <a href="{{ app.request.baseurl }}/article/view/{{ article.id }}" class="button green">Read more</a>
+                    
+                    <div class="ctrls">
+                        <a href="{{ app.request.baseurl }}/article/edit/{{ article.id }}" class="edit" title="Edit article">Edit article</a>
+                        <a href="{{ app.request.baseurl }}/article/remove/{{ article.id }}" class="remove" title="Remove article">Remove article</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>There are no articles to display. Begin adding some by pressing the &ldquo;Add a new article&rdquo; button above.</p>
+    {% endif %}
+{% endblock %}

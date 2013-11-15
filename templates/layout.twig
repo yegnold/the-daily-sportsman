@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <title>Silex example app</title>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic" />
+    <link rel="stylesheet" href="{{ app.request.basepath }}/assets/css/normalize.css">
+    <link rel="stylesheet" href="{{ app.request.basepath }}/assets/css/web.css">
+    {% block head_resources %}{% endblock %}
+</head>
+<body>
+    <h1 class="section head">The Daily Sportsman</h1>
+    
+    {% if title is defined %}<h2>{{ title }}</h2>{% endif %}
+    
+    {% block content %}{% endblock %}
+    
+    <p class="section foot">
+        Lucas Davies {{ 'now'|date('Y') }}
+        <small>Articles are entirely fictional and most are, unfortunately, never likely to happen. Ever. Maybe the Ashes one, perhaps.</small>
+    </p>
+</body>
+</html>

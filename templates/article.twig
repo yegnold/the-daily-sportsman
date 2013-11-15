@@ -1,0 +1,12 @@
+{% extends layout %}
+ 
+{% block content %}
+    
+    <small class="uppercase">{{ article.date }}</small>
+    
+    {% if article.content|length %}
+        <p>{{ article.content|nl2br }}</p>
+    {% endif %}
+    
+    {% include '_back.twig' %}
+{% endblock %}

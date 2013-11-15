@@ -1,0 +1,13 @@
+{% extends layout %}
+ 
+{% block content %}
+    <form action="{{ app.request.baseurl }}/article/delete" method="post">
+        <p>Are you sure you want to delete the article {{ form_data.title }}?</p>
+        <input type="hidden" name="id" id="id" value="{{ form_data.id }}" />
+        <input type="hidden" name="_method" id="_method" value="DELETE" />
+        <input type="submit" value="Yes" class="button green" />
+        <a href="{{ app.request.baseurl }}" class="button red">No</a>
+    </form>
+    
+    {% include '_back.twig' %}
+{% endblock %}
